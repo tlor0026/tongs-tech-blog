@@ -32,7 +32,7 @@ const sess = {
   app.use(express.urlencoded({ extended: false }));
   app.use(express.static(path.join(__dirname, 'public')));
   
-  app.use(require('./controllers/'));
+  app.use(require('./config/connection'));
   
   sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`Now listening on http://localhost:${PORT}`));
